@@ -4,30 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="login.css">
+    <title>Consultoria G-31 | Login</title>
+    <link rel="stylesheet" href="CSS/login.css">
 </head>
 <body>
     <div class="main">
         <div class="container">
             <div class="header">
                  <h2>Inicio de sesión</h2>
-                <span>Ingresa los datos</span>
+                <span>Bienvenido/a</span>
             </div>
-            <form action="">
+            <form id="form_login" method="get" action="index.html?login=true">
                 <div class="grupo">
                     <label for="">Correo</label>
-                    <input type="email" type="text" class="control">
+                    <input type="email" id="email"  type="text" class="control control_login" required>
                 </div>
                 <div class="grupo">
                     <label for="">Contraseña</label>
-                    <input type="password" class="control">
+                    <input type="password" id="clave" class="control control_login" required>
+					<input type="hidden" id="estado" name="estado" type="text" class="control control_login" value="true">
                 </div>
-                <div class="grupo">
-                    <button type="button" class="btn">Ingresar</button>
-                </div>
-				 <div class="grupo">
-                    <button type="button" class="btn btn_registro">Registrarse</button>
+                 <div class="botones">
+                    <button type="submit" class="btn">Iniciar sesión</button>
+                    <a href="registro.html"><div class="btnc">Registrarme</div></a>
+					<a href="index.html" class="inicio">Ir al inicio</a>
                 </div>
             </form>
         </div>

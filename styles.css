@@ -5,13 +5,15 @@
     }
     
     body {
-        font-family: arial;
-        background: #73a7d7;
+        font-family: 'open sans';
+        background: url("img/fondo.png") no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
     }
-    
+
     .form-login {
         width:400px;
-        height: 340px;
+        height: 400px;
         background: #4e4d4d;
         margin: auto;
         margin-top: 180px;

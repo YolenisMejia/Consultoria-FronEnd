@@ -20,8 +20,8 @@
             <div class="textos">
                 <h1 class="titulo"> ASESORÍA Y CONSULTORÍA </h1>
                 <h3 class="subtitulo">Especialistas en sitios web</h3>
-                <a href="login.html" class="boton">LOGIN</a>
-                <a href="registro.html" class="boton">REGÍSTRATE</a>
+                <a href="login.html" id="btn_login" class="boton">LOGIN</a>
+                <a href="registro.html" id="btn_registro" class="boton">REGÍSTRATE</a>
             </div>
             <div class="sesgoabajo"></div>
         </header>
@@ -94,10 +94,10 @@
                        <h2 class="titulo_patrocinadores"> Nuestros clientes</h2>
                        <h3 class="subtitulo_patrocinadores"> Estos son algunos de nuestros clientes </h3>
                        <div class="clientes">
-                           <div class="cliente"><img src="IMG/ea-sports-logo-light.png" alt=""></div>
-                           <div class="cliente"><img src="IMG/channels-616_logo_MinTIC.png" alt=""></div>
-                           <div class="cliente"><img src="IMG/1-LOGO-WEB_0.png" alt=""></div>
-                           <div class="cliente"><img src="IMG/veam-partner.jpg" alt=""></div>
+                           <a class="cliente" href="https://www.ea.com/es-es/games/fifa/fifa-22" target="_blank"><img src="IMG/ea-sports-logo-light.png" alt="Sports"></a>
+                           <a class="cliente" href="https://mintic.gov.co/portal/inicio/" target="_blank"><img src="IMG/channels-616_logo_MinTIC.png" alt="Mintic"></a>
+                           <a class="cliente" href="https://www.unab.edu.co/" target="_blank"><img src="IMG/1-LOGO-WEB_0.png" alt="Unab"></a>
+                           <a class="cliente" href="https://www.veeam.com" target="_blank"><img src="IMG/veam-partner.jpg" alt="Veeam"></a>
                        </div>
                    </div>
                    <div class="sesgoabajo_unico"></div>
@@ -121,6 +121,23 @@
             </div>
         </footer>
       <script type="text/javascript">
+	  
+		$( document ).ready(function() {
+			const valores = window.location.search;
+			if(valores != ''){
+				$('#btn_login').hide();
+				$('#btn_registro').hide();
+				$.alert({
+					title: 'Bienvenido/a',
+					content: 'Gracias por confiar en nuestros servicios.',
+					useBootstrap: false 
+				});
+			} else {
+				$('#btn_login').show();
+				$('#btn_registro').show();
+			}
+		});
+		
 		$('#enviar_contacto').on('click', function(){
 			valida();
 			

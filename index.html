@@ -66,7 +66,7 @@
                        <div class="cards">
 					   <a class="card" href="perfil.html?nombre=paola">
 						   <img src="IMG/paola.jpg" alt="">
-						   <h4> Yesika Paola Prada Ramirez </h4>
+						   <h4> Yesika Paola Prada Ramírez </h4>
 						   <p> Ingeniera de sistemas. </p>
 					   </a>
                         <a class="card" href="perfil.html?nombre=yefri">
@@ -79,12 +79,12 @@
                             <h4> Yolenis Maria Mejia </h4>
                             <p>Ingeniera de Sistemas.</p>
                         </a>
-                        <a class="card" href="perfil.html?nombre=jhoan">
+                        <a class="card" href="perfil.html?nombre=johan">
                             <img src="IMG/johan.jpg" alt="">
                             <h4> Jhoan Lopez Dominguez</h4>
                             <p>Ingeniero Agroindustrial.</p>
                         </a>
-						<a class="card" href="perfil.html?nombre=leo">
+						<a class="card" href="perfil.html?nombre=leonardo">
                             <img src="IMG/leo.png" alt="">
                             <h4> Leonardo Correa Rodriguez </h4>
                             <p>Tecnólogo en gestión naviera y portuaria.</p>
@@ -126,8 +126,8 @@
       <script type="text/javascript">
 	  
 		$( document ).ready(function() {
-			const valores = window.location.search;
-			if(valores != ''){
+			const estado = getQueryVariable(1);
+			if(estado == "true"){
 				$('#btn_login').hide();
 				$('#btn_registro').hide();
 				$.alert({
@@ -140,6 +140,16 @@
 				$('#btn_registro').show();
 			}
 		});
+		
+		function getQueryVariable(posicion) {
+		   var query = window.location.search.substring(posicion);
+		   var vars = query.split("&");
+		   for (var i=0; i < vars.length; i++) {
+			   var pair = vars[i].split("=");
+				   return pair[1];
+		   }
+		   return false;
+		}
 		
 		function valida(){
 			let nombre = $('#nombre').val();

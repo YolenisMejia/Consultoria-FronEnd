@@ -6,9 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultoria G-31 | Perfil</title>    
     <link rel="stylesheet" href="CSS/perfil.css">
+	<!-- jquery files -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
 </head>
 <body>   
-    <section class= "box">
+    <section class= "box" id="paola" style="display: none;">
+        <div class="boton">
+            <p><a href="index.html"> Inicio </a></p>
+        </div>
+        <img src="IMG/paola.jpg" width="180" alt="Foto de perfil" class="box-img">
+        <h1>Yesika Paola Prada Ramírez</h1>
+        <h2>Ingeniera de sistema</h2>
+        <h2>Apasionada por la tecnología</h2>
+        <ul class="parrafo">
+            <li>Analista de software.</li>
+            <li>Desarrolladora de software.</li>
+            <li>Líder y gestión de proyecto bajo la metodología SCRUM</li>
+            <li>Experiencia en creación de estándares ámbiente de trabajo: Metodología, Flujo para control de versiones.</li>
+            <li>Experiencia en diseño, implementación. revisión y evaluación de funcionamiento del software.</li>                
+        </ul>        
+    </section>
+	<section class= "box" id="yefri" style="display: none;">
+        <div class="boton">
+            <p><a href="index.html"> Inicio </a></p>
+        </div>
+        <img src="IMG/yefri.jpg" width="180" alt="Foto de perfil" class="box-img">
+        <h1>Yefri Alexander Padilla</h1>
+        <h2>Diseñador especializado en paginas web.</h2>
+        <h2>Gran Aficcion por el analisis y desarrollo de sistemas de informacion</h2>
+        <ul class="parrafo">
+            <li>Desarrollador de software con experiencia en diseño,
+                instalación, pruebas y mantenimiento de sistemas de
+                software.</li>
+            <li>Dominio de varias plataformas, lenguajes y sistemas
+                integrados.</li>
+            <li>Experiencia en las herramientas y procedimientos de
+                desarrollo más vanguardistas.</li>
+            <li>Capaz de autogestión eficaz en proyectos
+                independientes.</li>
+            <li>Buenas habilidades de colaboración dentro de un equipo
+                productivo.</li>                
+        </ul>        
+    </section>
+	<section class= "box" id="yolenis" style="display: none;">
+        <div class="boton">
+            <p><a href="index.html"> Inicio </a></p>
+        </div>
+        <img src="IMG/yole.jpg" width="180" alt="Foto de perfil" class="box-img">
+        <h1>Yolenis Maria Mejia</h1>
+        <h2>Ingeniera de sistemas</h2>
+        <h2>Gran Aficcion por el analisis y desarrollo de sistemas de informacion</h2>
+        <ul class="parrafo">
+            <li>Desarrollador de software con experiencia en diseño,
+                instalación, pruebas y mantenimiento de sistemas de
+                software.</li>
+            <li>Dominio de varias plataformas, lenguajes y sistemas
+                integrados.</li>
+            <li>Experiencia en las herramientas y procedimientos de
+                desarrollo más vanguardistas.</li>
+            <li>Capaz de autogestión eficaz en proyectos
+                independientes.</li>
+            <li>Buenas habilidades de colaboración dentro de un equipo
+                productivo.</li>                
+        </ul>        
+    </section>
+	<section class= "box" id="johan" style="display: none;">
+        <div class="boton">
+            <p><a href="index.html"> Inicio </a></p>
+        </div>
+        <img src="IMG/johan.jpg" width="180" alt="Foto de perfil" class="box-img">
+        <h1>Jhoan Lopez Dominguez</h1>
+        <h2>Ingeniero Agroindustrial.</h2>
+        <h2>Gran Aficcion por el analisis y desarrollo de sistemas de informacion</h2>
+        <ul class="parrafo">
+            <li>Desarrollador de software con experiencia en diseño,
+                instalación, pruebas y mantenimiento de sistemas de
+                software.</li>
+            <li>Dominio de varias plataformas, lenguajes y sistemas
+                integrados.</li>
+            <li>Experiencia en las herramientas y procedimientos de
+                desarrollo más vanguardistas.</li>
+            <li>Capaz de autogestión eficaz en proyectos
+                independientes.</li>
+            <li>Buenas habilidades de colaboración dentro de un equipo
+                productivo.</li>                
+        </ul>        
+    </section>
+	<section class= "box" id="leonardo" style="display: none;">
         <div class="boton">
             <p><a href="index.html"> Inicio </a></p>
         </div>
@@ -32,5 +116,23 @@
     </section>
     <div class="footer">
     </div>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			const nombre = getQueryVariable(1);
+			if(nombre != ''){
+				$('#'+nombre).show();
+			} 
+		});
+		
+		function getQueryVariable(posicion) {
+		   var query = window.location.search.substring(posicion);
+		   var vars = query.split("&");
+		   for (var i=0; i < vars.length; i++) {
+			   var pair = vars[i].split("=");
+				   return pair[1];
+		   }
+		   return false;
+		}
+	</script>
 </body>
 </html>

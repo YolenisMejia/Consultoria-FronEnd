@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Yefri Alexander Padilla">
+        <meta http-equiv = " X-UA-Compatible " content = " ie = edge " >
+        <meta name="keywords" content="html,css,xml,javascript">
+        <meta name="description" content="servicios de asesoria web">
+        <title>Consultoria G-31 | Inicio</title>
+		<link rel="stylesheet" href="CSS/estilos.css"> 
+		<!-- jquery-confirm files -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <div class="textos">
+                <h1 class="titulo"> ASESORÍA Y CONSULTORÍA </h1>
+                <h3 class="subtitulo">Especialistas en sitios web</h3>
+                <a href="login.html" class="boton">LOGIN</a>
+                <a href="registro.html" class="boton">REGÍSTRATE</a>
+            </div>
+            <div class="sesgoabajo"></div>
+        </header>
+        <main>
+            <seccion class="acerca_de">
+                <div class="contenedor">
+                    <h2 class="sobre nosotros"> Sobre nosotros</h2>
+                    <h3 class="slogan"> Asesores y consultores especializados </h3>
+                    <p class="parrafo">Somos una empresa enfocada en resaltar el talento colombiano, llevamos 6 meses en el mercado reclutando y formado profesionales con la capacidad de brindar asesoría en tus productos de software.</p>
+                    <p class="parrafo">Ofrecemos a nuestros clientes la orientación y los servicios que propicien el logro de los objetivos de un proyecto web de manera eficaz,rapida y sobre todo profesional analizando las metas del cliente, el mercado y público objetivo, el tiempo y dinero disponible, y tomando en cuenta todos los factores necesarios para su completa satisfaccion</p>
+                    <a href="#equipo" class="boton">Nuestro equipo</a>
+                </div>
+            </seccion>
+               <section class="galeria">
+                <div class="sesgoarriba"></div>
+                   <div class="imagenes"> 
+                       <img src="IMG/1.jpg" alt=""> 
+                   </div>
+                   <div class="imagenes">
+                        <img src="IMG/3.jpg" alt="">
+                    </div>
+                   <div class="imagenes"> 
+                        <img src="IMG/2.jpg" alt="">
+                    </div>
+                        <div class="encima">
+                            <h2> Asesores y consultores</h2>
+                        <div></div>
+                    </div> </div>
+                    </div>
+                   <div class="imagenes">
+                        <img src="IMG/4.jpeg" alt="">
+                    </div>
+                   <div class="imagenes">
+                        <img src="IMG/5.jpeg" alt="">
+                    </div>
+                    <div class="sesgoabajo"></div>
+                </section>
+                <section class="miembros">
+                   <div class="contenedor">
+                       <h2 id="equipo" class="sobre_nosotros"> Nuestro equipo</h2>
+                       <h3 class="slogan">Conoce a nuestro equipo de trabajo</h3>
+                       <div class="cards">
+                           <div class="card">
+                               <img src="IMG/paola.jpg" alt="">
+                               <h4> Yesika Paola Prada Ramirez </h4>
+                               <p> Ingeniera de sistemas </p>
+						   </div>
+					    <div>
+                        </div>
+                        <div class="card">
+                            <img src="IMG/yefri.jpg" alt="">
+                            <h4> Yefri Alexander Padilla </h4>
+                            <p> Diseñador especializado en paginas web  .</p>
+                        </div>
+                        <div class="card">
+                            <img src="IMG/yole.jpg" alt="">
+                            <h4> Yolenis Maria Mejia </h4>
+                            <p>Ingeniero de Sistemas.</p>
+                        </div>
+                        <div class="card">
+                            <img src="IMG/johan.jpg" alt="">
+                            <h4> Jhoan Lopez Dominguez</h4>
+                            <p>Ingeniero Agroindustrial.</p>
+                        </div>
+                    </div>
+               </section>
+               <section class="fondo">
+                   <div class="sesgoarriba"></div>
+                   <div class="contenedor">
+                       <h2 class="titulo_patrocinadores"> Nuestros clientes</h2>
+                       <h3 class="subtitulo_patrocinadores"> Estos son algunos de nuestros clientes </h3>
+                       <div class="clientes">
+                           <div class="cliente"><img src="IMG/ea-sports-logo-light.png" alt=""></div>
+                           <div class="cliente"><img src="IMG/channels-616_logo_MinTIC.png" alt=""></div>
+                           <div class="cliente"><img src="IMG/1-LOGO-WEB_0.png" alt=""></div>
+                           <div class="cliente"><img src="IMG/veam-partner.jpg" alt=""></div>
+                       </div>
+                   </div>
+                   <div class="sesgoabajo_unico"></div>
+
+               </section>
+        </main>
+        <footer>
+            <div class="contenedor">
+                <h2 class="titulo_footer">Contáctanos</h2>
+                <h3 class="subtitulo_footer">Llena el formulario y en el menor tiempo posible nos comunicaremos contigo.</h3>
+                <div class="footer">
+                    <form id="form_contacto">
+                    <input type="text" name="nombre" id="nombre" placeholder="* Nombre" required>
+                    <input type="email" name="correo" id="correo" placeholder="* Email" required>
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="* Ingrese su mensaje..." required></textarea>
+                    <button id="enviar_contacto" type="submit">Enviar</button>
+                    </form>
+                </div>
+                    
+                </footer>
+            </div>
+        </footer>
+      <script type="text/javascript">
+		$('#enviar_contacto').on('click', function(){
+			valida();
+			
+		});
+		
+		function valida(){
+			let nombre = $('#nombre').val();
+			let correo = $('#correo').val();
+			let mensaje = $('#mensaje').val();
+			if(nombre==''|| correo=='' || mensaje==''){
+				$.alert({
+					title: 'Error!',
+					content: 'Los campos con (*) son obligatorios!',
+					useBootstrap: false 
+				});
+				return false;
+			}
+			$.alert({
+				title: 'Gracias!',
+				content: nombre + ' pronto te estaremos contactando!',
+				useBootstrap: false 
+			});
+			$('#form_contacto').trigger("reset");
+		}
+	</script>	
+    </body>
+
+
+</html>

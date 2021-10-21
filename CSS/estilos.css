@@ -225,13 +225,13 @@ button{
 	padding: 1%;
     color: #fff;
     font-family: ubuntu;
-    background: #11a9d9;
+    background: #117bd9;
     border: 1px solid rgba(37, 37, 33, 0.7);
 	width: 200px;
 }
 
 button:hover{
-    background: #1c8265;
+    background: #11a9d9;
 	cursor: pointer;
 }
 
@@ -264,7 +264,7 @@ input{
     border-top: 1px solid rgba(37, 37, 33, 0.7);
 }
 input:focus{
-    border: 5px solid #11a9d9;
+    border: 2px solid #11a9d9;
 }
 textarea{
     display: block;
@@ -282,7 +282,7 @@ textarea{
 }
 
 textarea:focus{
-    border: 5px solid #11a9d9;
+    border: 2px solid #11a9d9;
 }
 
 input [ type = "submit" ] {
@@ -348,4 +348,8 @@ input [ type = "submit" ] {
     .subtitulo_patrocinadores{
         font-size: 20px;
     }
+}
+
+a:hover {
+	opacity: 0.5;
 }

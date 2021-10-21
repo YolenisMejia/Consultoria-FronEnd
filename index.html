@@ -109,10 +109,10 @@
                 <h2 class="titulo_footer">Contáctanos</h2>
                 <h3 class="subtitulo_footer">Llena el formulario y en el menor tiempo posible nos comunicaremos contigo.</h3>
                 <div class="footer">
-                    <form id="form_contacto">
-                    <input type="text" name="nombre" id="nombre" placeholder="* Nombre" required>
-                    <input type="email" name="correo" id="correo" placeholder="* Email" required>
-                    <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="* Ingrese su mensaje..." required></textarea>
+                    <form id="form_contacto" onSubmit="return valida();">
+                    <input type="text" id="nombre" placeholder="* Nombre" required>
+                    <input type="email" id="correo" placeholder="* Email" required>
+                    <textarea id="mensaje" cols="30" rows="10" placeholder="* Ingrese su mensaje..." required></textarea>
                     <button id="enviar_contacto" type="submit">Enviar</button>
                     </form>
                 </div>
@@ -138,11 +138,6 @@
 			}
 		});
 		
-		$('#enviar_contacto').on('click', function(){
-			valida();
-			
-		});
-		
 		function valida(){
 			let nombre = $('#nombre').val();
 			let correo = $('#correo').val();
@@ -161,6 +156,7 @@
 				useBootstrap: false 
 			});
 			$('#form_contacto').trigger("reset");
+			return false;
 		}
 	</script>	
     </body>

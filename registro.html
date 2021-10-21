@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Consultoria G-31 | Resgistro </title>
+    <link rel="stylesheet" href="CSS/login.css">
+	<!-- jquery-confirm files -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 </head>
 <body>
     <div class="main">
-        <form action="">
+	<form id="form_registro" action="login.html" onSubmit="return valida();">
         <div class="container">
             <div class="header">
                 <h2>Formulario de registro</h2>
-                <span>Por favor llene los campos</span>
+                <span>Para acceder a nuestros servicios por favor llena los siguientes campos</span>
             </div>
-            
                 <div class="col">
                     <div class="grupo">
                         <label for="">Nombre(s)</label>
-                        <input type="text" class="control" required>
+                        <input type="text" id="nombres" class="control" required>
                     </div>
                     <div class="grupo">
                         <label for="">Apellido</label>
@@ -27,24 +30,24 @@
                     </div>
                     <div class="grupo">
                         <label for="">Fecha nacimiento</label>
-                        <input type="date" class="control" required>
+                        <input type="date" id="fech_nac" class="control" required>
                     </div>
                     <div class="grupo">
-                        <label for="">Profesion</label>
+                        <label for="">Profesión</label>
                         <input type="text" class="control" required>
                     </div>
                 </div>
                 <div class="col col-2">
                     <div class="grupo">
-                        <label for="">Telefono/ celular</label>
+                        <label for="">Teléfono/ celular</label>
                         <input type="number" class="control" required>
                     </div>
                     <div class="grupo">
                         <label for="">Medio de contacto</label>
-                        <select class="control">
+                        <select class="control" required>
                             <option value="">Seleccione</option>
-                            <option value="navegador">Navegador</option>
-                            <option value="telefono">telefono</option>
+                            <option value="email">Correo</option>
+                            <option value="telefono">Teléfono</option>
                         </select>
                     </div>
                     <div class="grupo">
@@ -57,12 +60,52 @@
                     </div>
                 </div>
                 <div class="botones">
-                    <button type="submit" id="btnc">Registrarse</button>
-                    <button type="submit" id="btn">Ingresar</button>
+                    <button type="submit" class="btn">Registrarme</button>
+                    <a href="login.html"><div class="btnc">Ya tengo cuenta</div></a>
+					<a href="index.html" class="inicio">Ir al inicio</a>
                 </div>
-            
+                </div>
         </div>
     </form>
-    </div>    
+    </div> 
+     <script type="text/javascript">
+		
+		function valida(){
+			let nombre = $('#nombres').val();
+			let fecha = $('#fech_nac').val();
+			var hoy = new Date();
+			var cumpleanos = new Date(fecha);
+			var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+			var m = hoy.getMonth() - cumpleanos.getMonth();
+			 if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+				edad--;
+			}
+			if(edad < 18){
+				$.alert({
+					title: 'Lo sentimos!',
+					content: nombre + ' tu edad es ' + edad + ', debes ser mayor de 18 años o abrir la cuenta con datos de tu acudiente!',
+					useBootstrap: false 
+				});
+				return false;
+			}
+			$.alert({
+				title: 'Registro confirmado!',
+				content: nombre + ' tus datos han sido guardados exitosamente!',
+				useBootstrap: false ,
+				    buttons: {
+						specialKey: {
+							text: 'Login',
+							keys: ['shift', 'alt'],
+							action: function(){
+								$('#form_registro').trigger("reset");
+								window.open('login.html');
+								return true;
+							}
+						}
+					}
+			});
+			return false;
+		}
+	</script>	
 </body>
 </html>
